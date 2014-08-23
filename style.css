@@ -1,0 +1,102 @@
+#main
+{
+	background-color: #eeeeee;
+	position: absolute; top: 0; left: 20%; right: 20%; bottom: 0;
+}
+
+#box 
+{
+	background-color: #FFFFFF; 
+	position: absolute; top: 0; left: 5%; right: 5%; bottom: 36%;
+	box-shadow: 0 0 5px rgba(122,122,122,0.5); 
+	font: 18pt Arial;
+}
+
+#box1 
+{
+	position: absolute; top: 0; left: 0; right: 0;
+}
+
+#box2 
+{
+	background-color: #F4FBE7; 
+	position: absolute; top: 90%; left: 0; right: 0; bottom: 0;
+}
+
+#bottom 
+{
+	background-color: #eeeeee; 
+	position: absolute; top: 70%; left: 20%; right: 20%; bottom: 10%;
+	text-align: center;
+}
+
+.what 
+{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #bbbbbb;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 10px;
+	font-style: italic;
+	color: #a6a5a6;
+}
+
+.item 
+{
+	text-align: left; 
+	padding: 0px; 
+	margin-left: 5%;
+	font: 11pt Arial; 
+}
+
+.bot 
+ {
+	font: 11pt helvetica;	
+	color: #6e6e6e;
+	font-style: bold; 
+	margin-bottom: 10%;
+}
+
+#form 
+{
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: #bbbbbb;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding-top: 10px; 
+	padding-bottom: 10px;
+}
+
+#form1 
+{
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: #bbbbbb;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	text-decoration: line-through;
+	color: #6e6e6e;
+	font-style: bold;
+}
+
+h1 
+{
+	text-align: center; 
+	padding: 7px; 
+	vertical-align: center;
+}
+
+.item span 	
+{
+	background-color: #DCE2D0; 
+	font-family: Arial; 
+	font-size: 80%;
+	padding: 5px; 
+	border-radius: 50px 50px 50px 50px;
+	position: absolute; top: 20%; right: 5%; bottom: 20%;
+}
+
