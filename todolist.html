@@ -1,33 +1,37 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>Изучаем форматирование css</title>
+		<title>Todolist</title>
 		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="javascript.js"></script>
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="wrapper-content">
 				<div id="content">
 					<h1>Todos</h1>
-					<p class="what">What needs to be done?</p>
-					<div class="selected"> 
-						<input type="checkbox"/> Finish up LocalTodos
+					<div class="what">
+						<span>What needs to be done?</span>
+					</div>
+					<div class="checkbox"> 
+						<input type="checkbox"/><span>Finish up LocalTodos</span>
 					</div>
 					<div class="checkbox">	
-							<input type="checkbox"/> Take a screenshot
+							<input type="checkbox"/><span>Take a screenshot</span>
 					</div> 
 					<div class="checkbox">	
-						<input type="checkbox"/> Write a blog post
+						<input type="checkbox"/><span>Write a blog post</span> 
 					</div>
 					<br />
 				</div>
 				<div id="wrapper-bottom">
 					<div id="wrapper-item">
-						<div class="item"><b>2</b> items left.</div>
+						<div class="item"><span></span> items left.</div>
 					</div>
 					<div id="wrapper-completed-item">
-						<div class="completed-item">Clear 1 completed item</div>
+						<div class="completed-item">Clear <span></span> completed item</div>
 					</div>
 				</div>
 			</div>
