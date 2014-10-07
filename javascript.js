@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
 	//default quantity 
-	var arrayCheckbox = $('#content .checkbox');
+	var arrayCheckbox = $('.task-todo');
 	$('.item span').text(arrayCheckbox.length);
 	$('.completed-item span').text('0');
 
 	//line-through selected item
- 	$('.checkbox input').click(function() {
-   		$(this).closest('div').toggleClass('selected');
+ 	$('.wrapper-checkbox input').click(function() {
+   		$(this).parent('div').parent('div').children('.task-todo').toggleClass('selected');
 	
 		//items left to do
-		var arraySelected = $('#content .selected');	
+		var arraySelected = $('.selected');	
 		var itemsLeft = arrayCheckbox.length - arraySelected.length;
   		$('.item span').text(itemsLeft);	
 	

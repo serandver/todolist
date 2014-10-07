@@ -96,18 +96,11 @@ h1 {
 }
 
 .selected {
-	border-style: solid;
-	border-width: 0 0 1px 0;
-	border-color: #bbbbbb;
-	margin: 0;
-	padding-top: 10px; 
-	padding-bottom: 10px;
 	color: #6e6e6e;
 	font-style: bold;
 	font-size: 22px;
 	font-family: Arial, Helvetica;
 	text-decoration: line-through;
-
 }
 
 
@@ -144,3 +137,24 @@ h1 {
 	text-align: center;
 }
 
+.wrapper-checkbox {
+	width: 30px;
+	float: left;
+	padding-top: 15px;
+}
+
+.wrapper-task {
+	width: 100%;
+}
+
+.task-todo {
+	width: 100%;
+	font-size: 22px;
+	font-family: Arial, Helvetica;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: #bbbbbb;
+	margin: 0;
+	padding-top: 10px; 
+	padding-bottom: 10px;
+}
