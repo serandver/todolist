@@ -27,21 +27,20 @@ $(document).ready(function() {
 		$('.item span').text(arrayCheckbox.length); //счетчик количества заданий
 		$('#mytasks').on("click", "input", function() {
 			$(this).parent('div').parent('div').children('.task-todo').toggleClass('selected'); 
+			var arraySelected = $('.selected');	
+			var itemsLeft = arrayCheckbox.length - arraySelected.length;
+		  	$('.item span').text(itemsLeft);	
+			//clear items
+		  	var clearItem = arraySelected.length;
+			$('.completed-item span').text(clearItem);
 		})
 		
 
 
-			/*
+			
 			//items left to do
-			var arraySelected = $('.selected');	
-			var itemsLeft = arrayCheckbox.length - arraySelected.length;
-		  	$('.item span').text(itemsLeft);	
-			color: #6e6e6e;
-		font-style: bold; 	text-decoration: line-through;
-			//clear items
-		  	var clearItem = arraySelected.length;
-			$('.completed-item span').text(clearItem);
-			*/
+			
+			
 	})
 
 	    
