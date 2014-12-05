@@ -86,7 +86,7 @@ h1 {
 	font-size: 22px;
 	color: #a5a6a5;
 	box-sizing: border-box;
-
+	outline: none;
 }
 
 #add {
@@ -99,6 +99,8 @@ h1 {
 	background: #bbbbbb;
 	box-sizing: border-box;
 	color: #ffffff;
+	cursor: pointer;
+	outline: none;
 }
 
 .new-task input:focus {
@@ -136,6 +138,8 @@ h1 {
 	font-family: Arial; 
 	font-size: 70%;
 	padding: 1% 5%; 
+	text-align: center;
+	cursor: pointer;
 }
 
 .conclusion {
@@ -183,4 +187,3 @@ h1 {
 	font-family: Arial, Helvetica;
 	text-decoration: line-through;
 }
-
