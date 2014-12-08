@@ -1,66 +1,85 @@
 $(document).ready(function() {
 
-	var myTasks = []; //создаем пустой массив будущих заданий
-	$('.completed-item span').text('0');  //обнуляем счетчики
-	$('.item span').text('0');                 //обнуляем счетчики
 
+	todolist = {
+		title: "Todolist",
+		newTaskTitle: null,
+		itemsLeftCount: 0,
+		itemsCompletedCount: 0,
+		itemTemplate: null,
+		init: function() {
+			var itemsCount = $('.task-todo').length;
+			this.itemsCompletedCount = $('.itemDone').length;
+			this.itemsLeftCount = itemsCount - this.itemsCompletedCount;
+			this.itemTemplate = $("#itemtemplate");
+			$('.item span').text(this.itemsLeftCount);
+			$('.completed-item span').text(this.itemsCompletedCount);
+		},
+		addNewItem: function() {
+			var textNewTask = $("#newItem").val();
+			if (textNewTask == "What needs to be done?") {   
+				alert("Please write your task");
+			}
+			else if (textNewTask !== "") {
+				$("#mytasks").append(
+					_.template( $("#itemtemplate").html(), {taskTitle: textNewTask})
+				);
+				this.itemsLeftCount += 1;
+				$("#newItem").val("What needs to be done?");
+				this.init();
+			}
+			else {
+				alert("Please write your task");
+			};
+		},
+		
+		pullDataToServer: function() {
+
+		},
+		getDataFromServer: function() {
+
+		},
+	}; 	
+
+	//set empty field on focus, default field on blur
 	$('#newItem').focus(function() {
-		if (this.value=='What needs to be done?') {this.value=''}     //очищаем поле ввода при фокусе курсора
+		if (this.value=='What needs to be done?') {this.value=''}     
 	});
 	$('#newItem').blur(function() {
-		if (this.value=='') {this.value='What needs to be done?'}     //восстанавливаем подсказку в поле ввода при расфокусировке
+		if (this.value=='') {this.value='What needs to be done?'}     
 	});
 
 
-	$("#add").click(function () {                     // события по клику на кнопку add
 
-		if ($("#newItem").val() == "What needs to be done?") {    //проверка ошибочной кнопки "add"
-			alert("Вы не ввели новое задание!");
-		}
+	//event "add a new task on click" handler
+	$("#add").click( function() {
+		todolist.addNewItem();
+	});
 
+	//event "set a task done" handler
+	$('#mytasks').on("click", "input", function() {   
+			$(this).parent('div').parent('div').children('.task-todo').toggleClass('itemDone'); 
+			todolist.itemsCompletedCount += 1;
+			todolist.itemsLeftCount = todolist.itemsLeftCount - 1;
+			todolist.init();
+	});
 
+	//event "clear done tasks" handler
+	$(".completed-item").click(function () {           
+		$(".itemDone").parent('div').remove();
+		todolist.itemsCompletedCount = 0;
+		todolist.init();
+	});
 
+	todolist.init();
 
-		else if ($("#newItem").val() !== "") {
-			var e = $("#newItem").val();
-			function newTask (e) {     //создаем конструктор объектов - наших новых заданий
-				this.todo = e;
-				this.status = false;
-			};
-			var myTask = new newTask(e);   //создаем новый объект с значением свойства todo, равное значению поля ввода
-			myTasks[myTasks.length] = myTask;  //добавляем новое задание в конец массива
+	task = {
+		taskText: null,
+		taskStatus: null,
 
-			$("#mytasks").append('<div class="wrapper-task"><div class="wrapper-checkbox"><input type="checkbox"/></div><div class="task-todo">' + e + '</div></div>'); //добавляем задание в конец списка
-			$("#newItem").val("What needs to be done?");  //поле ввода в исходное положение
-
-			var arrayCheckbox = $('.task-todo');
-			$('.item span').text(arrayCheckbox.length); //счетчик общего количества заданий +1
-
-			$('#mytasks').on("click", "input", function() {                                                 //присваиваем класс .selected по щелчку на чекбокс
-				$(this).parent('div').parent('div').children('.task-todo').toggleClass('selected'); 
-				var arraySelected = $('.selected');	
-				var itemsLeft = arrayCheckbox.length - arraySelected.length;
-			  	$('.item span').text(itemsLeft);	             //счетчик общего количества заданий -1
-				//clear items
-			  	var clearItem = arraySelected.length;
-				$('.completed-item span').text(clearItem);       //счетчик выполненых заданий +1
-			});
-
-			$(".completed-item").click(function () {
-			      $(".selected").parent('div').remove();
-			      $('.completed-item span').text('0');
-			    });
+	};
+	
+	virtualServer = [];
 
 
-
-		} 
-
-
-		else {
-			alert("Вы не ввели новое задание!")
-		}; //проверка на пустое поле
-
-		
-
-	})
 }); //end ready

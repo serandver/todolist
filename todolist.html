@@ -6,6 +6,15 @@
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="javascript.js"></script>
+    	<script type="text/javascript" src="lodash.js"></script>
+   		<script type="text/template" id="itemtemplate">
+			<div class="wrapper-task">
+				<div class="wrapper-checkbox">
+					<input type="checkbox"/>
+				</div>
+				<div class="task-todo"><%=taskTitle%></div>
+			</div>
+		</script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -23,10 +32,10 @@
 				</div>
 				<div id="wrapper-bottom">
 					<div id="wrapper-item">
-						<div class="item"><span></span> items left.</div>
+						<div class="item"><span>0</span> items left.</div>
 					</div>
 					<div id="wrapper-completed-item">
-						<div class="completed-item">Clear <span></span> completed item</div>
+						<div class="completed-item">Clear <span>0</span> completed item</div>
 					</div>
 				</div>
 			</div>
